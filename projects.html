@@ -27,32 +27,6 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript">
-
-            window.onload = function(){
-                var accessToken = localStorage.getItem("access_token");
-                var obj = new Object();
-                obj.manager_id = accessToken;
-
-                $.post("http://ec2-34-209-28-166.us-west-2.compute.amazonaws.com:9923/get_all_projects",
-                    obj,
-                    function(data, status){
-                        JSON.stringify(data);
-                        var i=0;
-                        var rows ="";
-                        for(i=0; i<data.length; i++) {
-                            rows += "<tr id='row"+i+"'><th id='projectname"+i+"'>" + data[i].projectname + "</th><th id='version"+i+"'>" +
-                                data[i].version + "</th><th id='template"+i+"'>" + data[i].template +"</th><th id='desc"+i+"'>" +
-                                data[i].desc + "</th>" + "<td>"+ "<input style='display: block;' type='button' id='edit_button"+ i + "'"+"value='Edit' class='edit btn btn-primary' onclick='edit_row(" + i  + ")'>" + "<input style='display: block;' type='button' id='save_button"+i+" 'value='Save' class='save btn btn-primary' onclick='save_row(" + i  + ")'>"+"<input style='display: block;'type='button' value='Delete' class='delete btn btn-primary' onclick='delete_row(" + i  + ")'>" +"</td></tr>";
-                        }
-                            //document.getElementById("edit_button").style.display="none";
-                        var tbody = document.getElementById('itemlist');
-                        tbody.innerHTML = rows;
-
-                    });
-            }
-
-    </script>
 
 </head>
 <body>
