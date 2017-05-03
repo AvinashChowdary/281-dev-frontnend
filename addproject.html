@@ -45,8 +45,9 @@
             $.post("http://ec2-34-209-28-166.us-west-2.compute.amazonaws.com:9923/create_project",
                 obj,
                 function (data, status) {
-                    if (data.result) {
+                    if (data.project_id) {
                         alert("Project Created Successfully");
+                        window.history.back();
                     }
                 });
         }
