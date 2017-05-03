@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a9a5cd8-6fc6-4961-99ed-ea771c29abf5" name="Default" comment="&quot;Added customer files and update projects&quot;">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addcustomer.html" afterPath="$PROJECT_DIR$/addcustomer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addpost.html" afterPath="$PROJECT_DIR$/addpost.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addproject.html" afterPath="$PROJECT_DIR$/addproject.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/material-dashboard.js" afterPath="$PROJECT_DIR$/assets/js/material-dashboard.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/customers.html" afterPath="$PROJECT_DIR$/customers.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard.html" afterPath="$PROJECT_DIR$/dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deletecustomer.html" afterPath="$PROJECT_DIR$/deletecustomer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deletepost.html" afterPath="$PROJECT_DIR$/deletepost.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deleteproject.html" afterPath="$PROJECT_DIR$/deleteproject.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notifications.html" afterPath="$PROJECT_DIR$/notifications.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/postinfo.html" afterPath="$PROJECT_DIR$/postinfo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects.html" afterPath="$PROJECT_DIR$/projects.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/searchcustomer.html" afterPath="$PROJECT_DIR$/searchcustomer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/searchproject.html" afterPath="$PROJECT_DIR$/searchproject.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/updatecustomer.html" afterPath="$PROJECT_DIR$/updatecustomer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/updatepost.html" afterPath="$PROJECT_DIR$/updatepost.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/updateproject.html" afterPath="$PROJECT_DIR$/updateproject.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user.html" afterPath="$PROJECT_DIR$/user.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login.html" afterPath="$PROJECT_DIR$/login.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -106,11 +87,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="user.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/user.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="128" column="70" lean-forward="false" selection-start-line="128" selection-start-column="70" selection-end-line="128" selection-end-column="70" />
+            <state relative-caret-position="402">
+              <caret line="132" column="0" lean-forward="true" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -126,11 +107,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-694">
-              <caret line="29" column="45" lean-forward="false" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
+            <state relative-caret-position="-184">
+              <caret line="63" column="74" lean-forward="true" selection-start-line="63" selection-start-column="74" selection-end-line="63" selection-end-column="74" />
               <folding />
             </state>
           </provider>
@@ -177,7 +158,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/examples/login.html" />
-        <option value="$PROJECT_DIR$/login.html" />
         <option value="$PROJECT_DIR$/assets/css/edit.css" />
         <option value="$PROJECT_DIR$/update.html" />
         <option value="$PROJECT_DIR$/search.html" />
@@ -204,6 +184,7 @@
         <option value="$PROJECT_DIR$/updatepost.html" />
         <option value="$PROJECT_DIR$/updateproject.html" />
         <option value="$PROJECT_DIR$/user.html" />
+        <option value="$PROJECT_DIR$/login.html" />
       </list>
     </option>
   </component>
@@ -292,7 +273,7 @@
     <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="SearchEverywhereHistoryKey" value="add&#9;FILE&#9;file:///Projects/Trying/FrontEnd/addcustomer.html&#10;dashboar&#9;FILE&#9;file:///Projects/Trying/FrontEnd/dashboard.html&#10;details&#9;null&#9;null&#10;login&#9;FILE&#9;file:///Projects/Trying/FrontEnd/login.html&#10;project&#9;FILE&#9;file:///Projects/Trying/FrontEnd/projects.html" />
+    <property name="SearchEverywhereHistoryKey" value="login&#9;FILE&#9;file:///Projects/Trying/FrontEnd/login.html&#10;add&#9;FILE&#9;file:///Projects/Trying/FrontEnd/addcustomer.html&#10;dashboar&#9;FILE&#9;file:///Projects/Trying/FrontEnd/dashboard.html&#10;details&#9;null&#9;null&#10;project&#9;FILE&#9;file:///Projects/Trying/FrontEnd/projects.html" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -744,15 +725,16 @@
       <workItem from="1493708532438" duration="2287000" />
       <workItem from="1493712030651" duration="592000" />
       <workItem from="1493747009972" duration="10155000" />
-      <workItem from="1493790447507" duration="6561000" />
+      <workItem from="1493790447507" duration="6694000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32301000" />
+    <option name="totallyTimeSpent" value="32434000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="837" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -768,7 +750,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14513889" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14513889" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1136,14 +1118,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-694">
-          <caret line="29" column="45" lean-forward="false" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/notifications.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="436">
@@ -1212,8 +1186,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/user.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="128" column="70" lean-forward="false" selection-start-line="128" selection-start-column="70" selection-end-line="128" selection-end-column="70" />
+        <state relative-caret-position="402">
+          <caret line="132" column="0" lean-forward="true" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-184">
+          <caret line="63" column="74" lean-forward="true" selection-start-line="63" selection-start-column="74" selection-end-line="63" selection-end-column="74" />
           <folding />
         </state>
       </provider>
