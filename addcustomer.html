@@ -25,33 +25,27 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <!--<script type="text/javascript">
+    <script type="text/javascript">
     function createCustomer() {
         var customername = document.getElementById('customername_input').value;
-        var customerid = document.getElementById('customer_id').value;
-        var template = document.getElementById('template_input').value;
         var email = document.getElementById('email_id').value;
         var desc = document.getElementById('desc_input').value;
         var accessToken = localStorage.getItem("access_token");
         var obj = new Object();
-        obj.projectname = customername;
-        obj.customerid = customerid;
-        obj.template = template;
+        obj.username = customername;
         obj.email = email;
         obj.desc = desc;
         obj.manager_id = accessToken;
 
-        $.post("http://ec2-34-209-28-166.us-west-2.compute.amazonaws.com:9923/create_project",
+        $.post("http://ec2-34-209-28-166.us-west-2.compute.amazonaws.com:9923/create_customer",
             obj,
-            function (data, status) {
-                JSON.stringify(data);
-                if(data.access_token) {
-                    res = {"message": "success"};
-                    return res;
-                    window.location.href = "projects.html";}
+            function(data, status){
+                if(data.tester_id) {
+                    alert("Customer Created Successfully");
+                }
             });
     }
-</script>-->
+</script>
 </head>
 
 <body>
@@ -205,20 +199,6 @@
 
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label id="customerid" class="control-label">ID</label>
-                                                <input type="text" class="form-control" id="customer_id">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label id="template" class="control-label">Template</label>
-                                                <input type="text" class="form-control" id="template_input">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-12">
-                                            <div class="form-group">
                                                 <label id="email" class="control-label">Email ID</label>
                                                 <input type="email" class="form-control" id="email_id">
                                             </div>
@@ -227,12 +207,12 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label id="desc"class="control-label">Description</label>
-                                                <textarea class="form-control" rows="5" id="desc_input"></textarea>
+                                                <textarea class="form-control" rows="1" id="desc_input"></textarea>
                                             </div>
                                         </div>
                                    </div>
 
-                                    <button type="submit" class="btn btn-primary pull-right"onclick="createCustomer()">Create</button>
+                                    <button type="button" class="btn btn-primary pull-right"onclick="createCustomer()">Create</button>
                                     <div class="clearfix"></div>
                                 </form>
                             </div>
