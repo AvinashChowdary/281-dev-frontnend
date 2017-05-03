@@ -45,8 +45,10 @@
             $.post("http://ec2-34-209-28-166.us-west-2.compute.amazonaws.com:9923/create_project",
                 obj,
                 function(data, status){
-                    alert("Data: " + JSON.stringify(data) + "\nStatus: " + status);
-
+                if(data.result) {
+                    alert("Project Created Successfully");
+                    window.history.back();
+                }
                 });
         }
     </script>
@@ -212,12 +214,12 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label id="desc" class="control-label">Description</label>
-                                                <textarea class="form-control" rows="5" id="desc_input"></textarea>
+                                                <textarea class="form-control" rows="1" id="desc_input"></textarea>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <button type="submit" class="btn btn-primary pull-right" onclick="addProject()">Add
+                                    <button type="button" class="btn btn-primary pull-right" onclick="addProject()">Add
                                         Project
                                     </button>
                                     <div class="clearfix"></div>
