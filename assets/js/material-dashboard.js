@@ -348,3 +348,8 @@ function debounce(func, wait, immediate) {
 		if (immediate && !timeout) func.apply(context, args);
 	};
 };
+
+function logout() {
+    localStorage.setItem("access_token", "");
+    history.go(-(history.length - 1));
+}
