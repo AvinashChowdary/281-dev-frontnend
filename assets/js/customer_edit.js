@@ -67,7 +67,12 @@ window.onload = function () {
             var rows = "";
             for (i = 0; i < data.length; i++) {
                 rows += "<tr id='row" + i + "'><th id='name" + i + "'>" + data[i].username + "</th><th id='email" + i + "'>" +
-                    data[i].email + "</th><th id='details" + i + "'>" + data[i].details + "</th>" + "<td>" + "<input style='display: block;' type='button' id='edit_button" + i + "'" + "value='Edit' class='edit btn btn-primary' onclick='edit_row(" + i + ")'>" + "<input style='display: block;' type='button' id='save_button" + i + " 'value='Save' class='save btn btn-primary' onclick='save_row(" + i + ")'>" + "<input style='display: block;'type='button' value='Delete' class='delete btn btn-primary' onclick='delete_row(" + i + ")'>" + "</td></tr>";
+                    data[i].email + "</th><th id='details" + i + "'>" + data[i].details + "</th>" + "<td>" + "<img style='display: block;width:30px;height:30px;' id='edit_button"
+                    + i + "'" + "value='Edit' src='assets/img/ic_edit.png' onclick='edit_row(" + i + ")'>"
+                    + "<img style='display: block;width:30px;height:30px;' id='save_button"
+                    + i + " 'value='Save' src='assets/img/ic_save.png' onclick='save_row(" + i + ")'>"
+                    + "<img style='display: block;width:30px;height:30px;' src='assets/img/ic_delete.png' value='Delete' onclick='delete_row(" + i + ")'>"
+                    + "</td></tr>";
             }
             var tbody = document.getElementById('itemlist');
             tbody.innerHTML = rows;

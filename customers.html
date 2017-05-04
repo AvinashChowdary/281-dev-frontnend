@@ -29,14 +29,10 @@
 <body>
 <div class="wrapper">
     <div class="sidebar" data-color="purple" data-image="assets/img/sidebar-1.jpg">
-        <!--
-            Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
-            Tip 2: you can also add an image using data-image tag
-        -->
 
         <div class="logo" data-color="orange">
-            <!a href="http://www.creative-tim.com" class="simple-text">
+
             <a class="simple-text">
                 Project Manager
             </a>
@@ -56,16 +52,17 @@
                         <p>User Profile</p>
                     </a>
                 </li>
-                <li class="active">
-                    <a href="customers.html">
-                        <i class="material-icons">person</i>
-                        <p>Customers</p>
-                    </a>
-                </li>
+
                 <li class>
                     <a href="projects.html">
                         <i class="material-icons">content_paste</i>
                         <p>Projects</p>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="customers.html">
+                        <i class="material-icons">person</i>
+                        <p>Customers</p>
                     </a>
                 </li>
                 <li>
@@ -147,35 +144,12 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <form class="navbar-form navbar-right" role="search">
-                        <div class="form-group  is-empty">
-                            <span class="material-input"></span>
-                        </div>
-                        <img src="assets/img/search.png" onclick="location.href='searchcustomer.html'" style="width:32px;height:32px;"/>
-
-                    </form>
-                    <form class="navbar-form navbar-right" role="edit">
-                        <div class="form-group  is-empty">
-
-                            <span class="material-input"></span>
-                        </div>
-                        <img src="assets/img/edit.png" onclick="location.href='updatecustomer.html'" style="width:32px;height:32px;"/>
-
-                    </form>
-                    <form class="navbar-form navbar-right" role="delete">
-                        <div class="form-group  is-empty">
-
-                            <span class="material-input"></span>
-                        </div>
-                        <img src="assets/img/delete.png" onclick="location.href='deletecustomer.html'" style="width:32px;height:32px;"/>
-
-                    </form>
                     <form class="navbar-form navbar-right" role="add"action="" method="get">
                         <div class="form-group  is-empty">
 
                             <span class="material-input"></span>
                         </div>
-                        <img src="assets/img/add.png" onclick="location.href='addcustomer.html'" style="width:32px;height:32px;" />
+                        <img src="assets/img/ic_add.png" onclick="location.href='addcustomer.html'" style="width:32px;height:32px;" />
 
 
                     </form>
@@ -204,19 +178,9 @@
                 </div>
             </div>
         </div>
-        <footer class="footer">
-            <div class="container-fluid">
-                <nav class="pull-left">
-
-                </nav>
-                <p class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script>
-                </p>
-            </div>
-        </footer>
     </div>
     </div>
-
+</div>
 </body>
 
 <!--   Core JS Files   -->
