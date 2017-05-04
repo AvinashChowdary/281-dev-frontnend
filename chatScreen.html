@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png"/>
+    <link rel="icon" type="image/png" href="assets/img/favicon.png"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <title>Chat</title>
+
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
+    <meta name="viewport" content="width=device-width"/>
+
+    <!-- Bootstrap core CSS     -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!--  Material Dashboard CSS    -->
+    <link href="assets/css/material-dashboard.css" rel="stylesheet"/>
+
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="assets/css/demo.css" rel="stylesheet"/>
+
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet'
+          type='text/css'>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <div class="sidebar" data-color="purple" data-image="assets/img/sidebar-1.jpg">
+        <!--
+            Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+
+            Tip 2: you can also add an image using data-image tag
+        -->
+
+        <div class="logo" data-background-color="orange">
+            <!a href="http://www.creative-tim.com" class="simple-text">
+            <a class="simple-text">
+                Project Manager
+            </a>
+        </div>
+
+        <div class="sidebar-wrapper">
+            <ul class="nav">
+                <li>
+                    <a href="dashboard.html">
+                        <i class="material-icons">dashboard</i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="user.html">
+                        <i class="material-icons">person</i>
+                        <p>User Profile</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="projects.html">
+                        <i class="material-icons">content_paste</i>
+                        <p>Projects</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="notifications.html">
+                        <i class="material-icons text-gray">notifications</i>
+                        <p>Notifications</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="postinfo.html">
+                        <i class="material-icons">announcement</i>
+                        <p>Post Information</p>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="chat.html">
+                        <i class="material-icons">comment</i>
+                        <p>Chat</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-panel">
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-content table-responsive">
+                                <table class="table">
+                                    <thead class="text-primary">
+                                    <th>Chat</th>
+                                    </thead>
+                                    <tbody id="itemlist">
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            <div class="row" style="margin-left: 15px;margin-right: 30px;">
+                                <div class="col-md-12">
+                                    <div class="form-group label-floating">
+                                        <input type="text" id="msg" class="form-control" placeholder="Enter Message" style="float: left">
+                                        <img src="assets/img/ic_send.png" style="width: 30px;height: 30px;float: right;margin-bottom: 10px;" onclick="setChatData()"/>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<!--   Core JS Files   -->
+<script src="assets/js/jquery-3.1.0.min.js" type="text/javascript"></script>
+<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="assets/js/material.min.js" type="text/javascript"></script>
+
+<!--  Charts Plugin -->
+<script src="assets/js/chartist.min.js"></script>
+
+<!--  Notifications Plugin    -->
+<script src="assets/js/bootstrap-notify.js"></script>
+
+<!--  Google Maps Plugin    -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+<!-- Material Dashboard javascript methods -->
+<script src="assets/js/material-dashboard.js"></script>
+
+<!-- Material Dashboard DEMO methods, don't include it in your project! -->
+<script src="assets/js/demo.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        // Javascript method's body can be found in assets/js/demos.js
+        demo.initDashboardPageCharts();
+
+    });
+</script>
+
+<script type="text/javascript">
+    var customers;
+    window.onload = getChatData;
+
+    setInterval(getChatData, 2000);
+
+
+
+    function setChatData(msg) {
+        var message = document.getElementById('msg').value;
+        var obj = new Object;
+        obj.manager_id = localStorage.getItem("chat_mgr_id");
+        obj.customer_id = localStorage.getItem("tester_id");
+        obj.manager_msg = message;
+
+        $.post("http://ec2-34-209-28-166.us-west-2.compute.amazonaws.com:9923/set_chat_data",
+            obj,
+            function (data, status) {
+                if(!data.result) {
+                    alert('Failed to send message. Please try again');
+                } else {
+                    document.getElementById("msg").innerHTML = "";
+                    console.log('Message sent successfully');
+                    getChatData;
+                }
+            });
+
+    }
+
+    function getChatData() {
+        accessToken = localStorage.getItem("access_token");
+        var obj = new Object();
+        obj.manager_id = accessToken;
+        obj.customer_id = localStorage.getItem("tester_id");
+        $.post("http://ec2-34-209-28-166.us-west-2.compute.amazonaws.com:9923/get_chat_data",
+            obj,
+            function (data, status) {
+                JSON.stringify(data);
+                customers = data;
+                var i = 0;
+                var rows = "";
+                for (i = 0; i < data.length; i++) {
+                    if(data[i].manager_msg) {
+                        rows += "<tr id='row" + i + "' onclick='startChat(" + i + ")'><td style='float: right;' id='name" + i + "'>" + data[i].manager_msg + "</td></tr>";
+                    } else if(data[i].customer_msg) {
+                        rows += "<tr id='row" + i + "' onclick='startChat(" + i + ")'><td id='name" + i + "'>" + data[i].customer_msg + "</td></tr>";
+                    }
+                }
+                var tbody = document.getElementById('itemlist');
+                tbody.innerHTML = rows;
+
+            });
+    }
+
+</script>
+</html>
