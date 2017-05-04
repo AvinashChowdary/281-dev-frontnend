@@ -57,6 +57,7 @@ window.onload = function () {
     accessToken = localStorage.getItem("access_token");
     var obj = new Object();
     obj.manager_id = accessToken;
+    obj.project_id = localStorage.getItem("project_id");
 
     $.post("http://ec2-34-209-28-166.us-west-2.compute.amazonaws.com:9923/get_all_customers",
         obj,

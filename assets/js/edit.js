@@ -60,6 +60,11 @@ function delete_row(no) {
         });
 }
 
+function testerClicked(no) {
+    localStorage.setItem("project_id", projects[no]._id);
+    window.open("customers.html");
+}
+
 window.onload = function () {
     accessToken = localStorage.getItem("access_token");
     var obj = new Object();
@@ -80,7 +85,11 @@ window.onload = function () {
                     + "<img style='display: block;width:30px;height:30px;' id='save_button"
                     + i + " 'value='Save' src='assets/img/ic_save.png' onclick='save_row(" + i + ")'>"
                     + "<img style='display: block;width:30px;height:30px;' src='assets/img/ic_delete.png' value='Delete' onclick='delete_row(" + i + ")'>"
-                    + "</td></tr>";
+                    + "</td>"
+                    + "<th>"
+                        +"<img style='display: block;width:40px;height:40px;' src='assets/img/ic_tester.png' value='Delete' onclick='testerClicked(" + i + ")'>"
+                    +"</th>"
+                    +"</tr>";
             }
             //document.getElementById("edit_button").style.display="none";
             var tbody = document.getElementById('itemlist');

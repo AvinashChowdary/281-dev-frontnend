@@ -36,6 +36,7 @@
         obj.email = email;
         obj.desc = desc;
         obj.manager_id = accessToken;
+        obj.project_id = localStorage.getItem("project_id");
 
         $.post("http://ec2-34-209-28-166.us-west-2.compute.amazonaws.com:9923/create_customer",
             obj,
