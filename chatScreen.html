@@ -93,11 +93,11 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-content table-responsive">
-                                <table class="table">
-                                    <thead class="text-primary">
-                                    <th>Chat</th>
+                                <a class="text-primary-method">Chat</a>
+                                <table class="mytable">
+                                    <thead class="text-primary mythead">
                                     </thead>
-                                    <tbody id="itemlist">
+                                    <tbody id="itemlist" class="mytbody">
 
                                     </tbody>
                                 </table>
@@ -109,7 +109,6 @@
                                         <input type="text" id="msg" class="form-control" placeholder="Enter Message" style="float: left">
                                         <img src="assets/img/ic_send.png" style="width: 30px;height: 30px;float: right;margin-bottom: 10px;" onclick="setChatData()"/>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -200,6 +199,7 @@
                 }
                 var tbody = document.getElementById('itemlist');
                 tbody.innerHTML = rows;
+                tbody.scrollHeight;
 
             });
     }
