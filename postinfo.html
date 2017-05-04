@@ -24,6 +24,10 @@
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css'>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript"></script>
+
+
 </head>
 
 
@@ -32,14 +36,9 @@
 
 <div class="wrapper">
     <div class="sidebar" data-color="purple" data-image="assets/img/sidebar-1.jpg">
-        <!--
-            Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
-            Tip 2: you can also add an image using data-image tag
-        -->
 
         <div class="logo" data-color="orange">
-            <!a href="http://www.creative-tim.com" class="simple-text">
             <a class="simple-text">
                 Project Manager
             </a>
@@ -65,12 +64,7 @@
                         <p>Projects</p>
                     </a>
                 </li>
-                <li >
-                    <a href="customers.html">
-                        <i class="material-icons">person</i>
-                        <p>Customers</p>
-                    </a>
-                </li>
+
                 <li>
                     <a href="notifications.html">
                         <i class="material-icons text-gray">notifications</i>
@@ -113,13 +107,7 @@
                                 <span class="notification">5</span>
                                 <p class="hidden-lg hidden-md">Notifications</p>
                             </a>
-                            <ul class="dropdown-menu">
-                                <!li><!a href="#">Mike John responded to your email<!/a><!/li>
-                                <!li><!a href="#">You have 5 new tasks<!/a><!/li>
-                                <!li><!a href="#">You're now friend with Andrew<!/a><!/li>
-                                <!li><!a href="#">Another Notification<!/a><!/li>
-                                <!li><!a href="#">Another One<!/a><!/li>
-                            </ul>
+
                         </li>
                         <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -156,26 +144,9 @@
                         <h3>Information Posts</h3>
                         <form class="navbar-form navbar-right" role="search">
                             <div class="form-group  is-empty">
-                                <!--<input type="text" class="form-control" placeholder="Create">-->
                                 <span class="material-input"></span>
                             </div>
-                            <!img src="../assets/img/search.png" onclick="location.href='search.html'" style="width:32px;height:32px;"!/>
 
-                        </form>
-                        <form class="navbar-form navbar-right" role="edit">
-                            <div class="form-group  is-empty">
-
-                                <span class="material-input"></span>
-                            </div>
-                            <img src="assets/img/edit.png" onclick="location.href='updatepost.html'" style="width:32px;height:32px;"/>
-
-                        </form>
-                        <form class="navbar-form navbar-right" role="delete">
-                            <div class="form-group  is-empty">
-
-                                <span class="material-input"></span>
-                            </div>
-                            <img src="assets/img/delete.png" onclick="location.href='deletepost.html'" style="width:32px;height:32px;"/>
 
                         </form>
                         <form class="navbar-form navbar-right" role="add"action="" method="get">
@@ -183,28 +154,32 @@
 
                                 <span class="material-input"></span>
                             </div>
-                            <img src="assets/img/add.png" onclick="location.href='addpost.html'" style="width:32px;height:32px;" />
+                            <img src="assets/img/ic_add.png" onclick="location.href='addpost.html'" style="width:32px;height:32px;" />
 
 
                         </form>
 
                     </div>
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header" data-background-color="purple">
+                                <h4 class="title">List of Posts</h4>
+                            </div>
+
+                            <div id="response_data" class="card-content table-responsive">
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
 
-        <footer class="footer">
-            <div class="container-fluid">
-                <nav class="pull-left">
-
-                </nav>
-                <p class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script>
-                </p>
             </div>
-        </footer>
+        </div>
     </div>
 </div>
-
 </body>
 
 <!--   Core JS Files   -->
@@ -223,6 +198,7 @@
 
 <!-- Material Dashboard javascript methods -->
 <script src="assets/js/material-dashboard.js"></script>
+<script src="assets/js/post_edit.js"></script>
 
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <script src="assets/js/demo.js"></script>
