@@ -15,7 +15,7 @@ window.onload = function () {
             var i = 0;
             var rows = "";
             for (i = 0; i < data.length; i++) {
-                rows += "<br/><div class='alert alert-info' data-notify='container'><h3 class='title'>"
+                rows += "<div class='alert alert-info' data-notify='container'><h3 class='title'>"
                     + data[i].title + "</h3><span data-notify='message'>"+ data[i].desc +"</span></div><br/>"
             }
 
