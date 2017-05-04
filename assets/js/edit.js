@@ -62,7 +62,7 @@ function delete_row(no) {
 
 function testerClicked(no) {
     localStorage.setItem("project_id", projects[no]._id);
-    window.open("customers.html");
+    window.location.href = "customers.html";
 }
 
 window.onload = function () {
@@ -78,9 +78,9 @@ window.onload = function () {
             var i = 0;
             var rows = "";
             for (i = 0; i < data.length; i++) {
-                rows += "<tr id='row" + i + "'><th id='projectname" + i + "'>" + data[i].projectname + "</th><th id='version" + i + "'>" +
-                    data[i].version + "</th><th id='template" + i + "'>" + data[i].template + "</th><th id='desc" + i + "'>" +
-                    data[i].desc + "</th>" + "<td>" + "<img style='display: block;width:30px;height:30px;' id='edit_button"
+                rows += "<tr id='row" + i + "'><td id='projectname" + i + "'>" + data[i].projectname + "</td><td id='version" + i + "'>" +
+                    data[i].version + "</td><td id='template" + i + "'>" + data[i].template + "</td><td id='desc" + i + "'>" +
+                    data[i].desc + "</td>" + "<td>" + "<img style='display: block;width:30px;height:30px;' id='edit_button"
                     + i + "'" + "value='Edit' src='assets/img/ic_edit.png' onclick='edit_row(" + i + ")'>"
                     + "<img style='display: block;width:30px;height:30px;' id='save_button"
                     + i + " 'value='Save' src='assets/img/ic_save.png' onclick='save_row(" + i + ")'>"
