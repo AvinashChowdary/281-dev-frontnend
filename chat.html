@@ -109,10 +109,9 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="material-icons">notifications</i>
-                                <span class="notification"> </span>
+                                <span id="notify" class="notification"></span>
                                 <p class="hidden-lg hidden-md">Notifications</p>
                             </a>
-
                         </li>
                         <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -141,10 +140,15 @@
         </nav>
         <div class="content">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
+                <div class="card">
+                    <div class="card-header" data-background-color="purple">
+                        <h4 class="title">Chat</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-12">
 
+                            </div>
                             <div class="card-content table-responsive">
                                 <table class="table">
                                     <thead class="text-primary">
@@ -213,6 +217,21 @@
                 var tbody = document.getElementById('itemlist');
                 tbody.innerHTML = rows;
 
+            });
+
+        $.post("http://ec2-34-209-28-166.us-west-2.compute.amazonaws.com:9923/get_all_posts",
+            function (data, status) {
+                JSON.stringify(data);
+                posts = data;
+                var i = 0;
+                var count = 0;
+                var accessToken = localStorage.getItem("access_token");
+                for (i = 0; i < data.length; i++) {
+                    if (data.manager_id != accessToken) {
+                        count++;
+                    }
+                }
+                document.getElementById("notify").innerHTML = count;
             });
     }
 

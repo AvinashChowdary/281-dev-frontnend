@@ -359,19 +359,13 @@ window.onload = function () {
             JSON.stringify(data);
             posts = data;
             var i = 0;
-            var rows = "";
             var count = 0;
             var accessToken = localStorage.getItem("access_token");
             for (i = 0; i < data.length; i++) {
                 if (data.manager_id != accessToken) {
-                    rows += "<br/><div class='alert alert-info alert-with-icon' data-notify='container'>" + "<h3 class='title'>" + data[i].title + "</h3>" +
-                        "<i data-notify='icon' class='material-icons'>add_alert</i>" +
-                        "<span data-notify='message'>" + data[i].desc + "</span></div><br/>"
                     count++;
                 }
             }
-
-
             document.getElementById("notify").innerHTML = count;
         });
 }

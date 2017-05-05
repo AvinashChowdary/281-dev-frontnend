@@ -15,12 +15,27 @@ window.onload = function () {
             var i = 0;
             var rows = "";
             for (i = 0; i < data.length; i++) {
-                rows += "<div class='alert alert-info' data-notify='container'><h3 class='title'>"
-                    + data[i].title + "</h3><span data-notify='message'>"+ data[i].desc +"</span></div><br/>"
+                rows += "<br/><div class='alert alert-info' data-notify='container'><h3 class='title'>"
+                    + data[i].title + "</h3><span data-notify='message'>"+ data[i].desc +"</span></div>"
             }
 
             var tbody = document.getElementById("response_data");
             tbody.innerHTML = rows;
 
+        });
+
+    $.post("http://ec2-34-209-28-166.us-west-2.compute.amazonaws.com:9923/get_all_posts",
+        function (data, status) {
+            JSON.stringify(data);
+            posts = data;
+            var i = 0;
+            var count = 0;
+            var accessToken = localStorage.getItem("access_token");
+            for (i = 0; i < data.length; i++) {
+                if (data.manager_id != accessToken) {
+                    count++;
+                }
+            }
+            document.getElementById("notify").innerHTML = count;
         });
 }

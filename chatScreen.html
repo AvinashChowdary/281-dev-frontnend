@@ -27,28 +27,32 @@
 
     <style>
 
-        .mytable ,tr td{
+        .mytable, tr td {
             border-collapse: collapse;
             background-clip: padding-box;
             border: 15px solid transparent;
         }
+
         .mytbody {
-            display:block;
-            height:500px;
-            overflow:auto;
+            display: block;
+            height: 500px;
+            overflow: auto;
         }
+
         .mythead, tbody tr {
             border-top: 1px solid darkgray;
             border-bottom: 1px solid darkgray;
-            display:table;
-            width:100%;
-            table-layout:fixed;/* even columns width , fix width of table too*/
+            display: table;
+            width: 100%;
+            table-layout: fixed; /* even columns width , fix width of table too*/
         }
+
         .mythead {
-            width: 100%/* scrollbar is average 1em/16px width, remove it from thead width */
+            width: 100% /* scrollbar is average 1em/16px width, remove it from thead width */
         }
+
         .mytable {
-            width:100%
+            width: 100%
         }
 
     </style>
@@ -137,10 +141,9 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="material-icons">notifications</i>
-                                <span class="notification"> </span>
+                                <span id="notify" class="notification"></span>
                                 <p class="hidden-lg hidden-md">Notifications</p>
                             </a>
-
                         </li>
                         <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -169,11 +172,13 @@
         </nav>
         <div class="content">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card">
+                <div class="card">
+                    <div class="card-header" data-background-color="purple">
+                        <h4 class="title">Chat</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
                             <div class="card-content table-responsive">
-                                <a class="text-primary-method">Chat</a>
                                 <table class="mytable">
                                     <thead class="text-primary mythead">
                                     </thead>
@@ -186,8 +191,11 @@
                             <div class="row" style="margin-left: 15px;margin-right: 30px;">
                                 <div class="col-md-12">
                                     <div class="form-group label-floating">
-                                        <input type="text" id="msg" class="form-control" placeholder="Enter Message" style="float: left">
-                                        <img src="assets/img/ic_send.png" style="width: 30px;height: 30px;float: right;margin-bottom: 10px;" onclick="setChatData()"/>
+                                        <input type="text" id="msg" class="form-control" placeholder="Enter Message"
+                                               style="float: left">
+                                        <img src="assets/img/ic_send.png"
+                                             style="width: 30px;height: 30px;float: right;margin-bottom: 10px;"
+                                             onclick="setChatData()"/>
                                     </div>
                                 </div>
                             </div>
@@ -231,10 +239,25 @@
 
 <script type="text/javascript">
     var customers;
-    window.onload = getChatData;
+    window.onload = function () {
+        getChatData;
+        $.post("http://ec2-34-209-28-166.us-west-2.compute.amazonaws.com:9923/get_all_posts",
+            function (data, status) {
+                JSON.stringify(data);
+                posts = data;
+                var i = 0;
+                var count = 0;
+                var accessToken = localStorage.getItem("access_token");
+                for (i = 0; i < data.length; i++) {
+                    if (data.manager_id != accessToken) {
+                        count++;
+                    }
+                }
+                document.getElementById("notify").innerHTML = count;
+            });
+    }
 
     setInterval(getChatData, 2000);
-
 
 
     function setChatData(msg) {
@@ -247,7 +270,7 @@
         $.post("http://ec2-34-209-28-166.us-west-2.compute.amazonaws.com:9923/set_chat_data",
             obj,
             function (data, status) {
-                if(!data.result) {
+                if (!data.result) {
                     alert('Failed to send message. Please try again');
                 } else {
                     document.getElementById("msg").innerHTML = "";
@@ -271,9 +294,9 @@
                 var i = 0;
                 var rows = "";
                 for (i = 0; i < data.length; i++) {
-                    if(data[i].manager_msg) {
+                    if (data[i].manager_msg) {
                         rows += "<tr id='row" + i + "' onclick='startChat(" + i + ")'><td style='float: right;' id='name" + i + "'>" + data[i].manager_msg + "</td></tr>";
-                    } else if(data[i].customer_msg) {
+                    } else if (data[i].customer_msg) {
                         rows += "<tr id='row" + i + "' onclick='startChat(" + i + ")'><td id='name" + i + "'>" + data[i].customer_msg + "</td></tr>";
                     }
                 }
