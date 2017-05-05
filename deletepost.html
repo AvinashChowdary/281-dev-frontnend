@@ -76,7 +76,7 @@
                         <p>Post Information</p>
                     </a>
                 </li>
-                <li class="active">
+                <li >
                     <a href="chat.html">
                         <i class="material-icons">comment</i>
                         <p>Chat</p>
@@ -170,16 +170,7 @@
                 </div>
             </div>
 
-            <footer class="footer">
-                <div class="container-fluid">
-                    <nav class="pull-left">
 
-                    </nav>
-                    <p class="copyright pull-right">
-                        &copy; <script>document.write(new Date().getFullYear())</script>
-                    </p>
-                </div>
-            </footer>
         </div>
     </div>
 
@@ -203,27 +194,5 @@
 <script src="assets/js/material-dashboard.js"></script>
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <script src="assets/js/demo.js"></script>
-<script>
-    window.onload = function () {
-        $.post("http://ec2-34-209-28-166.us-west-2.compute.amazonaws.com:9923/get_all_posts",
-            function (data, status) {
-                JSON.stringify(data);
-                posts = data;
-                var i = 0;
-                var rows = "";
-                var count = 0;
-                var accessToken = localStorage.getItem("access_token");
-                for (i = 0; i < data.length; i++) {
-                    if (data.manager_id != accessToken) {
-                        rows += "<br/><div class='alert alert-info alert-with-icon' data-notify='container'>"+"<h3 class='title'>" + data[i].title + "</h3>" +
-                            "<i data-notify='icon' class='material-icons'>add_alert</i>" +
-                            "<span data-notify='message'>" + data[i].desc + "</span></div><br/>"
-                        count++;
-                    }
-                }
 
-                document.getElementById("notify").innerHTML=count;
-            });
-    }
-</script>
 </html>
