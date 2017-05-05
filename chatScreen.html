@@ -24,6 +24,34 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet'
           type='text/css'>
+
+    <style>
+
+        .mytable ,tr td{
+            border-collapse: collapse;
+            background-clip: padding-box;
+            border: 15px solid transparent;
+        }
+        .mytbody {
+            display:block;
+            height:500px;
+            overflow:auto;
+        }
+        .mythead, tbody tr {
+            border-top: 1px solid darkgray;
+            border-bottom: 1px solid darkgray;
+            display:table;
+            width:100%;
+            table-layout:fixed;/* even columns width , fix width of table too*/
+        }
+        .mythead {
+            width: 100%/* scrollbar is average 1em/16px width, remove it from thead width */
+        }
+        .mytable {
+            width:100%
+        }
+
+    </style>
 </head>
 
 <body>
