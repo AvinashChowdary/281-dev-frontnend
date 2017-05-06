@@ -68,7 +68,7 @@ window.onload = function () {
             var rows = "";
             for (i = 0; i < data.length; i++) {
                 rows += "<tr id='row" + i + "'><td id='name" + i + "'>" + data[i].username + "</td><td id='email" + i + "'>" +
-                    data[i].email + "</td><td id='details" + i + "'>" + data[i].details + "</td>" + "<td>" + "<img style='display: block;width:30px;height:30px;' id='edit_button"
+                    data[i].email + "</td><td id='details" + i + "'>" + data[i].desc + "</td>" + "<td>" + "<img style='display: block;width:30px;height:30px;' id='edit_button"
                     + i + "'" + "value='Edit' src='assets/img/ic_edit.png' onclick='edit_row(" + i + ")'>"
                     + "<img style='display: block;width:30px;height:30px;' id='save_button"
                     + i + " 'value='Save' src='assets/img/ic_save.png' onclick='save_row(" + i + ")'>"
