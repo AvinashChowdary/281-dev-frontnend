@@ -259,6 +259,7 @@
 
     function setChatData(msg) {
         var message = document.getElementById('msg').value;
+        document.getElementById("msg").innerHTML.value = "";
         var obj = new Object;
         obj.manager_id = localStorage.getItem("chat_mgr_id");
         obj.customer_id = localStorage.getItem("tester_id");
@@ -270,7 +271,6 @@
                 if (!data.result) {
                     alert('Failed to send message. Please try again');
                 } else {
-                    document.getElementById("msg").innerHTML = "";
                     console.log('Message sent successfully');
                     getChatData;
                 }
