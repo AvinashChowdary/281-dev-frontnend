@@ -31,21 +31,28 @@
         var email = document.getElementById('email_id').value;
         var desc = document.getElementById('desc_input').value;
         var accessToken = localStorage.getItem("access_token");
-        var obj = new Object();
-        obj.username = customername;
-        obj.email = email;
-        obj.desc = desc;
-        obj.manager_id = accessToken;
-        obj.project_id = localStorage.getItem("project_id");
+        var pwd = document.getElementById('pwd_id').value;
+        var cnfPwd = document.getElementById('cnf_pwd_id').value;
+        if(pwd === cnfPwd) {
+            var obj = new Object();
+            obj.username = customername;
+            obj.email = email;
+            obj.desc = desc;
+            obj.password = pwd;
+            obj.manager_id = accessToken;
+            obj.project_id = localStorage.getItem("project_id");
 
-        $.post("http://ec2-34-209-28-166.us-west-2.compute.amazonaws.com:9923/create_customer",
-            obj,
-            function(data, status){
-                if(data.tester_id) {
-                    alert("Customer Created Successfully");
-                    window.history.back();
-                }
-            });
+            $.post("http://ec2-34-209-28-166.us-west-2.compute.amazonaws.com:9923/create_customer",
+                obj,
+                function (data, status) {
+                    if (data.tester_id) {
+                        alert("Customer Created Successfully");
+                        window.history.back();
+                    }
+                });
+        } else {
+            alert("Make sure the Password and Confirm Password fields are same");
+        }
     }
 </script>
 </head>
@@ -181,6 +188,20 @@
                                             <div class="form-group">
                                                 <label id="email" class="control-label">Email ID</label>
                                                 <input type="email" class="form-control" id="email_id">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label id="pwd" class="control-label">Password</label>
+                                                <input type="password" class="form-control" id="pwd_id">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label id="cnf_pwd" class="control-label">Confirm Password</label>
+                                                <input type="password" class="form-control" id="cnf_pwd_id">
                                             </div>
                                         </div>
 
