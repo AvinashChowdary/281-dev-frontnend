@@ -350,7 +350,7 @@ function debounce(func, wait, immediate) {
 
 function logout() {
     localStorage.setItem("access_token", "");
-    history.go(-(history.length - 1));
+    window.location.href = "login.html";
 }
 
 window.onload = function () {
