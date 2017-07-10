@@ -350,22 +350,28 @@ function debounce(func, wait, immediate) {
 
 function logout() {
     localStorage.setItem("access_token", "");
-    window.location.href = "login.html";
+    window.location.replace("http://ec2-34-209-28-166.us-west-2.compute.amazonaws.com/login.html");
 }
 
 window.onload = function () {
-    $.post("http://ec2-34-211-29-235.us-west-2.compute.amazonaws.com:9923/get_all_posts",
-        function (data, status) {
-            JSON.stringify(data);
-            posts = data;
-            var i = 0;
-            var count = 0;
-            var accessToken = localStorage.getItem("access_token");
-            for (i = 0; i < data.length; i++) {
-                if (data.manager_id != accessToken) {
-                    count++;
+    var accessToken = localStorage.getItem("access_token");
+    if (accessToken) {
+        $.post("http://ec2-34-209-28-166.us-west-2.compute.amazonaws.com:9923/get_all_posts",
+            function (data, status) {
+                JSON.stringify(data);
+                posts = data;
+                var i = 0;
+                var count = 0;
+                var accessToken = localStorage.getItem("access_token");
+                for (i = 0; i < data.length; i++) {
+                    if (data.manager_id != accessToken) {
+                        count++;
+                    }
                 }
-            }
-            document.getElementById("notify").innerHTML = count;
-        });
+                document.getElementById("notify").innerHTML = count;
+            });
+    } else {
+        alert("Please login to continue");
+        window.location.replace("http://ec2-34-209-28-166.us-west-2.compute.amazonaws.com/login.html");
+    }
 }
