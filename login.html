@@ -27,7 +27,7 @@
                 obj.username = uname;
                 obj.password = pwd;
                 obj.email = email;
-                $.post("http://ec2-34-209-28-166.us-west-2.compute.amazonaws.com:9923/signup",
+                $.post("http://ec2-34-211-29-235.us-west-2.compute.amazonaws.com:9923/signup",
                     obj,
                     function (data, status) {
                         JSON.stringify(data);
@@ -39,7 +39,7 @@
         }
 
         function getToken(obj){
-            $.post("http://ec2-34-209-28-166.us-west-2.compute.amazonaws.com:9923/login",
+            $.post("http://ec2-34-211-29-235.us-west-2.compute.amazonaws.com:9923/login",
                 obj,
                 function (data, status) {
                     JSON.stringify(data);

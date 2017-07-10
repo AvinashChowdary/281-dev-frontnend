@@ -354,7 +354,7 @@ function logout() {
 }
 
 window.onload = function () {
-    $.post("http://ec2-34-209-28-166.us-west-2.compute.amazonaws.com:9923/get_all_posts",
+    $.post("http://ec2-34-211-29-235.us-west-2.compute.amazonaws.com:9923/get_all_posts",
         function (data, status) {
             JSON.stringify(data);
             posts = data;

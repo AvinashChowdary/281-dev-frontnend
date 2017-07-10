@@ -29,7 +29,7 @@ function save_row(no) {
     updateObj.manager_id = localStorage.getItem("access_token");
     updateObj.customer_id = customers[no]._id;
 
-    $.post("http://ec2-34-209-28-166.us-west-2.compute.amazonaws.com:9923/update_customer",
+    $.post("http://ec2-34-211-29-235.us-west-2.compute.amazonaws.com:9923/update_customer",
         updateObj, function (data, status) {
             if (data.result) {
                 document.getElementById("name" + no).innerHTML = name_val;
@@ -45,7 +45,7 @@ function save_row(no) {
 function delete_row(no) {
     var deleteObj = new Object();
     deleteObj.customer_id = customers[no]._id;
-    $.post("http://ec2-34-209-28-166.us-west-2.compute.amazonaws.com:9923/delete_customer",
+    $.post("http://ec2-34-211-29-235.us-west-2.compute.amazonaws.com:9923/delete_customer",
         deleteObj, function (data, status) {
             if (data.result) {
                 document.getElementById("row" + no + "").outerHTML = "";
@@ -59,7 +59,7 @@ window.onload = function () {
     obj.manager_id = accessToken;
     obj.project_id = localStorage.getItem("project_id");
 
-    $.post("http://ec2-34-209-28-166.us-west-2.compute.amazonaws.com:9923/get_all_customers",
+    $.post("http://ec2-34-211-29-235.us-west-2.compute.amazonaws.com:9923/get_all_customers",
         obj,
         function (data, status) {
             JSON.stringify(data);
@@ -79,7 +79,7 @@ window.onload = function () {
             tbody.innerHTML = rows;
 
         });
-    $.post("http://ec2-34-209-28-166.us-west-2.compute.amazonaws.com:9923/get_all_posts",
+    $.post("http://ec2-34-211-29-235.us-west-2.compute.amazonaws.com:9923/get_all_posts",
         function (data, status) {
             JSON.stringify(data);
             posts = data;

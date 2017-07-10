@@ -238,7 +238,7 @@
     var customers;
     window.onload = function () {
         getChatData;
-        $.post("http://ec2-34-209-28-166.us-west-2.compute.amazonaws.com:9923/get_all_posts",
+        $.post("http://ec2-34-211-29-235.us-west-2.compute.amazonaws.com:9923/get_all_posts",
             function (data, status) {
                 JSON.stringify(data);
                 posts = data;
@@ -265,7 +265,7 @@
         obj.customer_id = localStorage.getItem("tester_id");
         obj.manager_msg = message;
 
-        $.post("http://ec2-34-209-28-166.us-west-2.compute.amazonaws.com:9923/set_chat_data",
+        $.post("http://ec2-34-211-29-235.us-west-2.compute.amazonaws.com:9923/set_chat_data",
             obj,
             function (data, status) {
                 if (!data.result) {
@@ -283,7 +283,7 @@
         var obj = new Object();
         obj.manager_id = accessToken;
         obj.customer_id = localStorage.getItem("tester_id");
-        $.post("http://ec2-34-209-28-166.us-west-2.compute.amazonaws.com:9923/get_chat_data",
+        $.post("http://ec2-34-211-29-235.us-west-2.compute.amazonaws.com:9923/get_chat_data",
             obj,
             function (data, status) {
                 JSON.stringify(data);
